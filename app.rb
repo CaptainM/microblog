@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra_reloader'
+require 'sinatra/reloader'
 require 'active_record'
 require 'better_errors'
 
@@ -20,7 +20,7 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
-AciverRecord::Base.establish_connection ({
+ActiveRecord::Base.establish_connection ({
 	adapter: 'postgresql',
 	database: 'microblog_db'
 	})

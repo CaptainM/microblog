@@ -1,0 +1,17 @@
+<h3> Edit Post <%= @micropost.title %> </h3>
+
+<form action= "/microposts/<%= @micropost.id %>" method = "POST">
+	<input type="hidden" name ="_method" value="PUT">
+	<label for="Title">Title<br>
+		<input type="text" name = "micropost[title]" value ="<%=@micropost.title%>" >
+	</label><br>
+	
+	<label for="Post">Post<br>
+		<input type="text" name = "micropost[post]" value = "<%=@micropost.post%>">
+	</label><br>
+	
+	<label for="date_created">Date Created<br>
+		<input type="text" name ="micropost[date_created]" value = "<%= @micropost.date_created%>" >
+	</label><br>
+	<button>SUBMIT</button>
+</form>

@@ -1,3 +1,5 @@
 ###Home###
 
-get '/'
+get '/' do 
+	erb :'home/home'
+end

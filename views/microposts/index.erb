@@ -1,0 +1,12 @@
+<br><br><a href="/microposts/new">Would you like to add a new post?</a>
+
+
+<% @microposts.each do |x|%>
+
+<h2><%= x.id %> | <%= x.title %> | <%= x.date_created %></h2>
+
+<p><%= x.post %></p>
+
+<a href="/microposts/<%= x.id %>">View Post</a>
+
+<% end %> 

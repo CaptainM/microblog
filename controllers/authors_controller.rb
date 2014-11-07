@@ -1,13 +1,13 @@
 ###Author###
 
-(index)
-get '/authors'
+#(index)
+# get '/authors'
 
-(show)
-get '/authors/:id'
+# #(show)
+# get '/authors/:id'
 
-(create)
-post '/authors'
+# #(create)
+# post '/authors'
 
-(delete)
-delete '/authors/:id'
+# #(delete)
+# delete '/authors/:id'
