@@ -8,5 +8,11 @@
 <p><%= x.post %></p>
 
 <a href="/microposts/<%= x.id %>">View Post</a>
+ 
+<% @microposts.tags.each do |y| %>
+<a href="/tags/<%=y.id %>">y.name</a>
+<% end %> 
+
 
 <% end %> 
+

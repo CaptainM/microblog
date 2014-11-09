@@ -15,3 +15,10 @@
 	</label><br>
 	<button>SUBMIT</button>
 </form>
+
+
+
+<form action = "/microposts/<%= @micropost.id %> " method="POST">
+	<input type ="hidden" name = "_method" value = "DELETE">
+	<button>DELETE</button>
+</form>

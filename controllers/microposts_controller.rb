@@ -1,26 +1,30 @@
 #(index)
 get '/microposts' do 
-	"Hello World!"
 	@microposts = Micropost.all()
+	@tags = Tag.all
  	erb :'microposts/index'
 end
 
 #(new)
 get '/microposts/new' do
+	@author = Author.all
+	@tags = Tag.all
 	erb :'microposts/new'
 end
 
 #(show)
 get '/microposts/:id' do
+	@author = Author.all
 	@micropost = Micropost.find(params[:id])
 	erb :'microposts/show'
 end
 
 #(create)
 post '/microposts' do
-	micropost =Micropost.new(params[:micropost])
-	micropost.save
-	redirect("/microposts/#{micropost.id}")
+	@author = Author.all
+	@micropost =Micropost.new(params[:micropost])
+	@micropost.save
+	redirect("/microposts")
 end
 
 #(edit)
@@ -30,11 +34,15 @@ get '/microposts/:id/edit' do
 end
 
 #(update)
-put 'microposts/:id' do 
+put '/microposts/:id' do 
 	micropost = Micropost.find(params[:id])
 	micropost.update(params[:micropost])
 	redirect("/microposts/#{micropost.id}")
 end
 
 #(destroy)
-#delete 'microposts/:id'
+delete '/microposts/:id' do
+	@micropost = Micropost.find(params[:id])
+	@micropost.destroy
+	redirect "/microposts"
+end

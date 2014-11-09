@@ -1,0 +1,8 @@
+<p> This is where I show all my authors</p>
+
+<% @authors.each do |x| %>
+	<%= x.name %> | <%= x.occupation %> | <%= x.age %> <br>
+
+	 <img src="<%= x.image_url %>"><br><br>
+
+	<% end %>

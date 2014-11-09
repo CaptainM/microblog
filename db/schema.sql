@@ -9,7 +9,8 @@ CREATE TABLE authors (
 	id serial primary key,
 	name varchar(255),
 	occupation varchar(255),
-	age integer
+	age integer,
+	image_url varchar(512)
 );
 
 

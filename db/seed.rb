@@ -17,12 +17,14 @@ Micropost.destroy_all
 author_names = ["Sara", "Ross", "Rebecca", "Susan", "Duncan", "Rob", "Freddie"]
 author_occupation = ["Jedi Master", "Philanthropist", "(Ex)Terminator", "Wild Child", "Accountant", "Analrapist", "Midwife"]
 author_age = [7, 36, 23, 77, 14, 59, 90]
+author_image = ["http://i.imgur.com/bNv4oBZ.jpg", "http://i.imgur.com/c5lJ5vq.jpg", "http://i.imgur.com/VoZkGrc.jpg", "http://i.imgur.com/PgE3fZ6.jpg", "http://i.imgur.com/hziGj7h.jpg" ]
 
 5.times do 
 	Author.create(
 		name: author_names.sample,
 		occupation: author_occupation.sample,
-		age: author_age.sample
+		age: author_age.sample,
+		image_url: author_image.sample
 		)
 end
 

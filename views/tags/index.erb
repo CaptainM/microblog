@@ -1,0 +1,10 @@
+<div class = "tags">
+<% @tags.each do |x| %>
+
+<%= x.value %> <br>
+
+
+<a href="/tags/<%=x.id %>/edit"> Would you like to Edit this Tag?</a><br><br>
+<% end %>
+</div>
+

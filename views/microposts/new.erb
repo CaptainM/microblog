@@ -4,6 +4,15 @@
 	<label for="Title">Title<br>
 		<input type="text" name = "micropost[title]" >
 	</label><br>
+
+	<label for="author">Author<br>
+		<select name="micropost[author_id]">
+			<% @author.each do |x| %>
+				<option value="<%= x.id %>"><%= x.name %></option>			
+			<% end %>
+		</select>
+		<a href="/authors/new">Would you Like to Add a New Author?</a>
+	</label><br>
 	
 	<label for="Post">Post<br>
 		<input type="text" name = "micropost[post]" >
@@ -12,5 +21,12 @@
 	<label for="date_created">Date Created<br>
 		<input type="text" name ="micropost[date_created]">
 	</label><br>
+	<label for "tags">Tags<br>
+		<% @tags.each do |x| %>
+		<input type = "checkbox" name = "types[]" value = 
+		'<%= x.value %>'><%= x.value %><br/>
+		<% end %>
+	</label> 	
 	<button>SUBMIT</button>
 </form>
+
