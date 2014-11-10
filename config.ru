@@ -15,11 +15,9 @@ require_relative 'controllers/home_controller.rb'
 require_relative 'controllers/microposts_controller.rb'
 require_relative 'controllers/tags_controller.rb'
 
-
-ActiveRecord::Base.establish_connection ({
-	adapter: 'postgresql',
-	database: 'microblog_db'
-	})
-after {ActiveRecord::Base.connection.close}
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+after { ActiveRecord::Base.connection.close }
 
 run Sinatra::Application
+
+env[DATABASE_URL]
