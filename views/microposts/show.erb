@@ -1,6 +1,15 @@
 <div class = "one micropost">
-<h3><%= @micropost.title %> | <%= @micropost.date_created %></h3><br>
-<p><%= @micropost.post %><p>
+<h3><%= @micropost.title %> | <%= @micropost.date_created %></h3>
+<p><%= @micropost.post %></p><br>
+<%= @micropost.author.name%><br>
+<img src = "<%=@micropost.author.image_url %>"</a><br>
+
+Tags: <% @micropost.tags.each do |y| %>
+ <a href="/tags/<%=y.id %>"><%=y.value %></a>
+<% end %> <br>
+
+
+
 
 <a href="/microposts/<%= @micropost.id %>/edit">Would you like to Edit this Post?</a><br><br>
 </div>

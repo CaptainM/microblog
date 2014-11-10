@@ -16,6 +16,7 @@ end
 get '/microposts/:id' do
 	@author = Author.all
 	@micropost = Micropost.find(params[:id])
+	@tags = Tag.all
 	erb :'microposts/show'
 end
 

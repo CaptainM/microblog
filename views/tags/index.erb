@@ -1,7 +1,13 @@
 <div class = "tags">
 <% @tags.each do |x| %>
 
-<%= x.value %> <br>
+<h1>Microposts with "<%= x.value %>" Tag Name</h1>
+
+
+<% x.microposts.each do |one_micropost| %>
+<h3><%= one_micropost.title %></h3>
+<p><%= one_micropost.post %> </p>
+<% end %> 
 
 
 <a href="/tags/<%=x.id %>/edit"> Would you like to Edit this Tag?</a><br><br>

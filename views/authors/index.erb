@@ -1,12 +1,18 @@
-<p> This is where I show all my authors</p>
+
 
 <% @authors.each do |x| %>
 	<%= x.name %> | <%= x.occupation %> | <%= x.age %> <br>
 
 	 <img src="<%= x.image_url %>"><br>
+	 <a href="/authors/<%=x.id%>/edit">Edit this Author?</a><br>
+	 <form action ="/authors/<%= x.id%>" method = "POST">
+	 	<input type = "hidden" name = "_method" value ="DELETE">
+	 	<p> Delete this Author?<button>DELETE</button></p>
+	 </form>
 	 <% x.microposts.each do |current_micropost|%>
-	 <a href="/microposts/<%= current_micropost.id%>"><%= current_micropost.post %></a>
-	 <% end %><br><br>
+	 <h3> <%= current_micropost.title %></h3>
+	 <%= current_micropost.post %></a><br>
+	 <% end %><br>
 
 	 
 	

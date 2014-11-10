@@ -50,10 +50,10 @@ micropost_date = ["10/4/2003", "5/5/2013", "2/28/1999", "12/8/2014", "7/19/2013"
 		title: micropost_title.sample,
 		post: micropost_post.sample,
 		date_created: micropost_date.sample,
-		author_id: Author.all.sample
+		author_id: Author.all.sample.id
 		#microposts each have three tags
 		})
-	micropost.save
+	micropost.save!
 	micropost.tags = Tag.all.sample(3)
 end
 
