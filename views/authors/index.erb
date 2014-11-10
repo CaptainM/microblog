@@ -3,6 +3,13 @@
 <% @authors.each do |x| %>
 	<%= x.name %> | <%= x.occupation %> | <%= x.age %> <br>
 
-	 <img src="<%= x.image_url %>"><br><br>
+	 <img src="<%= x.image_url %>"><br>
+	 <% x.microposts.each do |current_micropost|%>
+	 <a href="/microposts/<%= current_micropost.id%>"><%= current_micropost.post %></a>
+	 <% end %><br><br>
 
+	 
+	
 	<% end %>
+
+	

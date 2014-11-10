@@ -7,7 +7,7 @@
 
 # #(show)
 get '/tags/:id' do 
-	@tags = Tags.find(params[:id])
+	@tags = Tag.find(params[:id])
 	erb :'tags/show'
 end
 

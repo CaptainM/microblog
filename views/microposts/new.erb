@@ -21,7 +21,7 @@
 	<label for="date_created">Date Created<br>
 		<input type="text" name ="micropost[date_created]">
 	</label><br>
-	<label for "tags">Tags<br>
+	<label for ="tags">Tags<br>
 		<% @tags.each do |x| %>
 		<input type = "checkbox" name = "types[]" value = 
 		'<%= x.value %>'><%= x.value %><br/>
