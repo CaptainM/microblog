@@ -1,6 +1,6 @@
 <br><br><a href="/microposts/new">Would you like to add a new post?</a>
 
-
+<div class = "main">
 <% @microposts.each do |x|%>
 
 <h2><%= x.id %> | <%= x.title %> | <%= x.date_created %></h2>
@@ -15,4 +15,5 @@
 
 
 <% end %> 
+</div>
 

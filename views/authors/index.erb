@@ -1,9 +1,11 @@
 
 
+<div class = "main">
 <% @authors.each do |x| %>
-	<%= x.name %> | <%= x.occupation %> | <%= x.age %> <br>
-
+	<h1><%= x.name %> | <%= x.occupation %> | <%= x.age %> </h1><br>
+	<div class="image">
 	 <img src="<%= x.image_url %>"><br>
+	</div>
 	 <a href="/authors/<%=x.id%>/edit">Edit this Author?</a><br>
 	 <form action ="/authors/<%= x.id%>" method = "POST">
 	 	<input type = "hidden" name = "_method" value ="DELETE">
@@ -13,9 +15,8 @@
 	 <h3> <%= current_micropost.title %></h3>
 	 <%= current_micropost.post %></a><br>
 	 <% end %><br>
-
-	 
 	
 	<% end %>
+</div>
 
 	

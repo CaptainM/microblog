@@ -1,5 +1,6 @@
 <h3> Edit Post <%= @micropost.title %> </h3>
 
+<div class = "main">
 <form action= "/microposts/<%= @micropost.id %>" method = "POST">
 	<input type="hidden" name ="_method" value="PUT">
 	<label for="Title">Title<br>
@@ -26,3 +27,4 @@
 	<input type ="hidden" name = "_method" value = "DELETE">
 	<button>DELETE</button>
 </form>
+</div>

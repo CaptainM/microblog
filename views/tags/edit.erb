@@ -1,6 +1,9 @@
-<h1> This is where you edit your tag</h1>
+<h1> Please click below to delete this tag</h1>
 
+
+<div class = "main">
 <form action = "/tags/<%= @tag.id%>" method = "POST">
 	<input type = "hidden" name= "_method" value = "DELETE">
 	<button>DELETE</button>
 </form>
+</div>
